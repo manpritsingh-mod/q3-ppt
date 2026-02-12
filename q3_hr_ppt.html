@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 Review - Manprit Singh Panesar</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0B0D17;
+            --bg-2: #111327;
+            --card: rgba(255, 255, 255, 0.04);
+            --card-hover: rgba(255, 255, 255, 0.07);
+            --purple: #7C6AFF;
+            --blue: #4DA8FF;
+            --teal: #3EDDC6;
+            --pink: #FF6B9D;
+            --gold: #FFB74D;
+            --green: #66DE93;
+            --text: #FFFFFF;
+            --text2: rgba(255, 255, 255, 0.7);
+            --text3: rgba(255, 255, 255, 0.4);
+            --border: rgba(255, 255, 255, 0.06);
+            --grad1: linear-gradient(135deg, #7C6AFF, #4DA8FF);
+            --grad2: linear-gradient(135deg, #FF6B9D, #FFB74D);
+            --grad3: linear-gradient(135deg, #3EDDC6, #4DA8FF);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 48px;
+            backdrop-filter: blur(24px);
+            background: rgba(11, 13, 23, 0.85);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Outfit';
+            font-weight: 800;
+            font-size: 1rem;
+            background: var(--grad1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text3);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        /* SLIDE */
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 110px 60px 80px;
+        }
+
+        .inner {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(124, 106, 255, 0.1), transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 50px;
+            background: rgba(124, 106, 255, 0.1);
+            border: 1px solid rgba(124, 106, 255, 0.2);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--purple);
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-family: 'Outfit';
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background: var(--grad1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text2);
+            max-width: 560px;
+            margin: 0 auto 12px;
+        }
+
+        .hero-name {
+            font-size: 0.95rem;
+            color: var(--text3);
+            font-weight: 500;
+            margin-top: 8px;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 56px;
+            margin-top: 48px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Outfit';
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--grad1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* TAG */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .tag-purple {
+            background: rgba(124, 106, 255, 0.1);
+            color: var(--purple);
+            border: 1px solid rgba(124, 106, 255, 0.2);
+        }
+
+        .tag-pink {
+            background: rgba(255, 107, 157, 0.1);
+            color: var(--pink);
+            border: 1px solid rgba(255, 107, 157, 0.2);
+        }
+
+        .tag-teal {
+            background: rgba(62, 221, 198, 0.1);
+            color: var(--teal);
+            border: 1px solid rgba(62, 221, 198, 0.2);
+        }
+
+        .tag-gold {
+            background: rgba(255, 183, 77, 0.1);
+            color: var(--gold);
+            border: 1px solid rgba(255, 183, 77, 0.2);
+        }
+
+        /* SECTION TITLE */
+        .stitle {
+            font-family: 'Outfit';
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            line-height: 1.15;
+        }
+
+        .sdesc {
+            font-size: 1.05rem;
+            color: var(--text2);
+            max-width: 650px;
+            margin-bottom: 44px;
+        }
+
+        /* CARDS */
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .g2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .g3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .g4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 32px;
+            transition: all 0.35s ease;
+        }
+
+        .card:hover {
+            background: var(--card-hover);
+            transform: translateY(-3px);
+            border-color: rgba(124, 106, 255, 0.15);
+        }
+
+        .card-emoji {
+            font-size: 2.2rem;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .card-title {
+            font-family: 'Outfit';
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .card-text {
+            font-size: 0.88rem;
+            color: var(--text2);
+            line-height: 1.7;
+        }
+
+        /* POC HEADER */
+        .poc-head {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 36px;
+        }
+
+        .poc-num {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit';
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .poc-head h2 {
+            font-family: 'Outfit';
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .poc-head p {
+            color: var(--text2);
+            font-size: 0.92rem;
+        }
+
+        /* VS COMPARISON */
+        .vs-grid {
+            display: grid;
+            grid-template-columns: 1fr 60px 1fr;
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .vs-box {
+            border-radius: 18px;
+            padding: 36px;
+        }
+
+        .vs-before {
+            background: rgba(255, 107, 157, 0.04);
+            border: 1px solid rgba(255, 107, 157, 0.12);
+        }
+
+        .vs-after {
+            background: rgba(62, 221, 198, 0.04);
+            border: 1px solid rgba(62, 221, 198, 0.12);
+        }
+
+        .vs-mid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit';
+            font-weight: 800;
+            color: var(--text3);
+            font-size: 1rem;
+        }
+
+        .vs-box h3 {
+            font-family: 'Outfit';
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .vs-box ul {
+            list-style: none;
+        }
+
+        .vs-box li {
+            padding: 9px 0;
+            font-size: 0.9rem;
+            color: var(--text2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .vs-box li:last-child {
+            border-bottom: none;
+        }
+
+        /* BANNER */
+        .banner {
+            border-radius: 20px;
+            padding: 44px 48px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 44px;
+        }
+
+        .banner-item {
+            text-align: center;
+        }
+
+        .banner-num {
+            font-family: 'Outfit';
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .banner-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* FLOW */
+        .flow {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+            padding: 16px 0;
+        }
+
+        .flow-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 12px;
+        }
+
+        .flow-step::after {
+            content: '→';
+            position: absolute;
+            right: -10px;
+            top: 30px;
+            font-size: 1.3rem;
+            color: var(--purple);
+            font-weight: 800;
+        }
+
+        .flow-step:last-child::after {
+            display: none;
+        }
+
+        .flow-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            border: 1.5px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .flow-step:hover .flow-icon {
+            transform: scale(1.08);
+            border-color: var(--purple);
+        }
+
+        .flow-title {
+            font-family: 'Outfit';
+            font-weight: 700;
+            font-size: 0.88rem;
+            margin-bottom: 4px;
+        }
+
+        .flow-desc {
+            font-size: 0.76rem;
+            color: var(--text3);
+        }
+
+        /* DIAGRAM BLOCK */
+        .diagram-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 28px 0;
+        }
+
+        .diagram-label {
+            text-align: center;
+            font-family: 'Outfit';
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 28px;
+        }
+
+        /* THANK YOU */
+        .ty-title {
+            font-family: 'Outfit';
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: var(--grad1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ANIMATION */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+            .slide {
+                padding: 100px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .stitle {
+                font-size: 1.8rem;
+            }
+
+            .g2,
+            .g3,
+            .g4 {
+                grid-template-columns: 1fr;
+            }
+
+            .vs-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .flow {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .flow-step::after {
+                content: '↓';
+                right: auto;
+                top: auto;
+                bottom: -12px;
+            }
+
+            .banner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                padding: 14px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">Q3 Review</div>
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#project1">Project 1</a></li>
+            <li><a href="#project2">Project 2</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#learnings">Learnings</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============ SLIDE 1: HERO ============ -->
+    <section class="slide hero" id="overview">
+        <div class="inner" style="position:relative; z-index:1;">
+            <div class="hero-badge">Quarter 3 Performance Review</div>
+            <h1>Making Teams Work<br><span>Faster & Smarter</span></h1>
+            <p>Delivered two projects this quarter that help development teams save time, reduce errors, and work more
+                independently.</p>
+            <div class="hero-name">Manprit Singh Panesar</div>
+
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-num">2</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">3+</div>
+                    <div class="stat-label">Teams Benefited</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">70%</div>
+                    <div class="stat-label">Time Saved</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 2: WHAT I DID ============ -->
+    <section class="slide">
+        <div class="inner reveal">
+            <span class="tag tag-purple">📋 Quarter At A Glance</span>
+            <h2 class="stitle">What I Delivered This Quarter</h2>
+            <p class="sdesc">Two projects focused on making teams more productive — by removing repetitive work and
+                making information easier to access.</p>
+
+            <div class="grid g2">
+                <div class="card">
+                    <span class="card-emoji">⚙️</span>
+                    <div class="card-title">Project 1: Standardized Build Process for React</div>
+                    <div class="card-text">
+                        Created a <strong>one-click setup system</strong> so any React project team can start working
+                        with the same quality process — instead of each team creating their own from scratch.
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🤖</span>
+                    <div class="card-title">Project 2: AI-Powered Problem Solver</div>
+                    <div class="card-text">
+                        Connected our build system with <strong>AI</strong> so anyone in the team — developers, QA, or
+                        managers — can simply ask <em>"What went wrong?"</em> and get instant answers in plain language.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 3: PROJECT 1 — PROBLEM ============ -->
+    <section class="slide" id="project1">
+        <div class="inner reveal">
+            <div class="poc-head">
+                <div class="poc-num" style="background:var(--grad1);">01</div>
+                <div>
+                    <h2>Standardized Build Process</h2>
+                    <p>Making sure all React project teams follow the same quality process</p>
+                </div>
+            </div>
+
+            <span class="tag tag-pink">🔥 The Challenge</span>
+            <h2 class="stitle" style="font-size:2rem;">Every Team Was Doing It Differently</h2>
+
+            <div class="vs-grid" style="margin-top:28px;">
+                <div class="vs-box vs-before">
+                    <h3 style="color:var(--pink);">❌ Before</h3>
+                    <ul>
+                        <li>📄 Every team created their own process from scratch</li>
+                        <li>🔧 Different approaches led to different quality levels</li>
+                        <li>🐛 A fix in one project didn't help other projects</li>
+                        <li>⚠️ Some teams skipped important quality checks</li>
+                        <li>⏱️ Setting up a new project took days of effort</li>
+                    </ul>
+                </div>
+                <div class="vs-mid">VS</div>
+                <div class="vs-box vs-after">
+                    <h3 style="color:var(--teal);">✅ After My Work</h3>
+                    <ul>
+                        <li>📦 One ready-made system shared by all teams</li>
+                        <li>🎯 Every project follows the same quality standard</li>
+                        <li>🔄 Fix once — it helps every project automatically</li>
+                        <li>✅ Quality checks happen automatically, nothing skipped</li>
+                        <li>🚀 New project setup now takes minutes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 4: PROJECT 1 — HOW IT WORKS ============ -->
+    <section class="slide">
+        <div class="inner reveal">
+            <span class="tag tag-purple">⚙️ How It Works</span>
+            <h2 class="stitle" style="font-size:2rem;">Simple, Automatic, No Extra Work</h2>
+            <p class="sdesc">Teams just connect their project — the system handles everything else automatically.</p>
+
+            <div class="diagram-box">
+                <div class="diagram-label">How The Process Works</div>
+                <div class="flow">
+                    <div class="flow-step">
+                        <div class="flow-icon" style="background:rgba(124,106,255,0.12);">👨‍💻</div>
+                        <div class="flow-title">Developer Writes Code</div>
+                        <div class="flow-desc">Team member saves their work</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon" style="background:rgba(77,168,255,0.12);">🔍</div>
+                        <div class="flow-title">Auto Quality Check</div>
+                        <div class="flow-desc">System checks for errors & best practices</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon" style="background:rgba(62,221,198,0.12);">🏗️</div>
+                        <div class="flow-title">Auto Build & Test</div>
+                        <div class="flow-desc">Builds the project & runs all tests</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon" style="background:rgba(255,183,77,0.12);">📊</div>
+                        <div class="flow-title">Report Generated</div>
+                        <div class="flow-desc">Clear pass/fail report created</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon" style="background:rgba(102,222,147,0.12);">🔔</div>
+                        <div class="flow-title">Team Gets Notified</div>
+                        <div class="flow-desc">Results sent via email & Slack</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="banner" style="background:var(--grad1);">
+                <div class="banner-item">
+                    <div class="banner-num">90%</div>
+                    <div class="banner-label">Faster Project Setup</div>
+                </div>
+                <div class="banner-item">
+                    <div class="banner-num">100%</div>
+                    <div class="banner-label">Quality Checks Automated</div>
+                </div>
+                <div class="banner-item">
+                    <div class="banner-num">1</div>
+                    <div class="banner-label">System for All Teams</div>
+                </div>
+                <div class="banner-item">
+                    <div class="banner-num">0</div>
+                    <div class="banner-label">Manual Work Needed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 5: PROJECT 1 — RESULTS ============ -->
+    <section class="slide">
+        <div class="inner reveal">
+            <span class="tag tag-teal">🏆 Results</span>
+            <h2 class="stitle" style="font-size:2rem;">What This Achieved</h2>
+
+            <div class="grid g4">
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">📦</span>
+                    <div class="card-title">One Shared System</div>
+                    <div class="card-text">All React teams use the same process now</div>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">✅</span>
+                    <div class="card-title">Auto Quality Checks</div>
+                    <div class="card-text">Errors caught early, nothing missed</div>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">🧪</span>
+                    <div class="card-title">Automatic Testing</div>
+                    <div class="card-text">Tests run on their own with clear reports</div>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">📧</span>
+                    <div class="card-title">Instant Notifications</div>
+                    <div class="card-text">Teams know the status right away</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 6: PROJECT 2 — PROBLEM ============ -->
+    <section class="slide" id="project2">
+        <div class="inner reveal">
+            <div class="poc-head">
+                <div class="poc-num" style="background:var(--grad3);">02</div>
+                <div>
+                    <h2>AI-Powered Problem Solver</h2>
+                    <p>Making it easy for anyone to understand and fix build issues</p>
+                </div>
+            </div>
+
+            <span class="tag tag-pink">🔥 The Challenge</span>
+            <h2 class="stitle" style="font-size:2rem;">Finding & Fixing Problems Was Painful</h2>
+
+            <div class="grid g3" style="margin-top:28px;">
+                <div class="card">
+                    <span class="card-emoji">⏰</span>
+                    <div class="card-title">Hours Wasted</div>
+                    <div class="card-text">When something went wrong, someone had to manually go through thousands of
+                        lines of data to find what happened. This took hours every time.</div>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🧑‍💼</span>
+                    <div class="card-title">Only Experts Could Help</div>
+                    <div class="card-text">Only a few experienced people could understand the error details. Everyone
+                        else had to wait — creating bottlenecks.</div>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🚧</span>
+                    <div class="card-title">Everyone Depended on One Team</div>
+                    <div class="card-text">QA, managers, and other teams always had to ask the same team for updates —
+                        they couldn't check on their own.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 7: PROJECT 2 — SOLUTION ============ -->
+    <section class="slide">
+        <div class="inner reveal">
+            <span class="tag tag-teal">💡 The Solution</span>
+            <h2 class="stitle" style="font-size:2rem;">Just Ask — AI Does the Rest</h2>
+            <p class="sdesc">Now anyone can ask a question in plain English and get an instant answer. No expertise
+                needed.</p>
+
+            <div class="vs-grid" style="margin-top:28px;">
+                <div class="vs-box vs-before">
+                    <h3 style="color:var(--pink);">❌ The Old Way</h3>
+                    <ul>
+                        <li>🖥️ Log into the system</li>
+                        <li>🔎 Navigate to the right project</li>
+                        <li>📜 Open the error details</li>
+                        <li>👀 Read through everything manually</li>
+                        <li>🤔 Guess what went wrong & try again</li>
+                    </ul>
+                </div>
+                <div class="vs-mid">VS</div>
+                <div class="vs-box vs-after">
+                    <h3 style="color:var(--teal);">✅ The New Way (AI)</h3>
+                    <ul>
+                        <li>💬 Just ask: <em>"What went wrong?"</em></li>
+                        <li>⚡ AI pulls up the relevant information instantly</li>
+                        <li>🧠 AI identifies the root cause</li>
+                        <li>🔧 AI suggests the exact solution</li>
+                        <li>✅ You approve — problem fixed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 8: PROJECT 2 — WHO BENEFITS ============ -->
+    <section class="slide">
+        <div class="inner reveal">
+            <span class="tag tag-purple">👥 Who Benefits</span>
+            <h2 class="stitle" style="font-size:2rem;">Helpful for Everyone — Not Just Experts</h2>
+
+            <div class="diagram-box">
+                <div class="diagram-label">How It Works in Real Life</div>
+                <div class="flow">
+                    <div class="flow-step">
+                        <div class="flow-icon" style="background:rgba(124,106,255,0.12);">💬</div>
+                        <div class="flow-title">Anyone Asks</div>
+                        <div class="flow-desc">A simple question in plain English</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon" style="background:rgba(62,221,198,0.12);">🧠</div>
+                        <div class="flow-title">AI Understands</div>
+                        <div class="flow-desc">Figures out what you need</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon" style="background:rgba(255,183,77,0.12);">📡</div>
+                        <div class="flow-title">Fetches Info</div>
+                        <div class="flow-desc">Gets the right data automatically</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon" style="background:rgba(255,107,157,0.12);">🔍</div>
+                        <div class="flow-title">Finds the Answer</div>
+                        <div class="flow-desc">Identifies what went wrong & why</div>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-icon" style="background:rgba(102,222,147,0.12);">✅</div>
+                        <div class="flow-title">Gives Solution</div>
+                        <div class="flow-desc">Ready-to-apply fix in seconds</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid g3" style="margin-top:12px;">
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">👨‍💻</span>
+                    <div class="card-title">Developers</div>
+                    <div class="card-text"><em>"What went wrong with my project?"</em><br>→ Gets instant answer + fix
+                        suggestion</div>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">🧪</span>
+                    <div class="card-title">QA Team</div>
+                    <div class="card-text"><em>"Show me all failures from today"</em><br>→ Gets a summary across all
+                        projects</div>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">👔</span>
+                    <div class="card-title">Managers</div>
+                    <div class="card-text"><em>"Is the project ready for release?"</em><br>→ AI checks everything &
+                        gives clear answer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 9: COMBINED IMPACT ============ -->
+    <section class="slide" id="impact">
+        <div class="inner reveal">
+            <span class="tag tag-gold">📊 Overall Impact</span>
+            <h2 class="stitle">Quarter 3 Results</h2>
+            <p class="sdesc">Both projects together are saving teams significant time, improving quality, and removing
+                bottlenecks.</p>
+
+            <div class="banner" style="background:var(--grad3);">
+                <div class="banner-item">
+                    <div class="banner-num">70%</div>
+                    <div class="banner-label">Less Time Finding Problems</div>
+                </div>
+                <div class="banner-item">
+                    <div class="banner-num">90%</div>
+                    <div class="banner-label">Faster New Project Setup</div>
+                </div>
+                <div class="banner-item">
+                    <div class="banner-num">100%</div>
+                    <div class="banner-label">Consistent Quality</div>
+                </div>
+                <div class="banner-item">
+                    <div class="banner-num">All</div>
+                    <div class="banner-label">Teams Self-Sufficient</div>
+                </div>
+            </div>
+
+            <div class="grid g2" style="margin-top:40px;">
+                <div class="card">
+                    <span class="card-emoji">🎯</span>
+                    <div class="card-title">Same High Standard Everywhere</div>
+                    <div class="card-text">Every React project now follows the same quality process. No more variations
+                        between teams — one improvement benefits everyone.</div>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🙌</span>
+                    <div class="card-title">Teams Work Independently</div>
+                    <div class="card-text">With AI assistance, anyone can check project status and understand issues on
+                        their own — no waiting, no bottlenecks.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 10: LEARNINGS ============ -->
+    <section class="slide" id="learnings">
+        <div class="inner reveal">
+            <span class="tag tag-purple">📚 Growth</span>
+            <h2 class="stitle">What I Learned This Quarter</h2>
+
+            <div class="grid g3">
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">🏗️</span>
+                    <div class="card-title">Building Scalable Solutions</div>
+                    <div class="card-text">Learned to design systems that serve multiple teams with one solution</div>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">🤖</span>
+                    <div class="card-title">Working with AI</div>
+                    <div class="card-text">Gained hands-on experience connecting AI to existing company systems</div>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">🧪</span>
+                    <div class="card-title">Quality & Automation</div>
+                    <div class="card-text">Deepened understanding of automated quality checks, testing, and reporting
+                    </div>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">🎯</span>
+                    <div class="card-title">Problem-First Approach</div>
+                    <div class="card-text">Focused on understanding real team pain points before building solutions
+                    </div>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">🗣️</span>
+                    <div class="card-title">Cross-Team Communication</div>
+                    <div class="card-text">Improved ability to work with and present to different teams and stakeholders
+                    </div>
+                </div>
+                <div class="card" style="text-align:center;">
+                    <span class="card-emoji">📐</span>
+                    <div class="card-title">End-to-End Ownership</div>
+                    <div class="card-text">Took ownership from idea to delivery — planning, building, testing, and
+                        presenting</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 11: NEXT QUARTER ============ -->
+    <section class="slide">
+        <div class="inner reveal">
+            <span class="tag tag-teal">🔮 Looking Ahead</span>
+            <h2 class="stitle">Plans for Quarter 4</h2>
+
+            <div class="grid g3">
+                <div class="card">
+                    <span class="card-emoji">🌐</span>
+                    <div class="card-title">Expand to More Platforms</div>
+                    <div class="card-text">Extend the standardized process to support more project types beyond React.
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">☁️</span>
+                    <div class="card-title">Scale for Larger Teams</div>
+                    <div class="card-text">Make the system handle higher workloads automatically during busy periods.
+                    </div>
+                </div>
+                <div class="card">
+                    <span class="card-emoji">🛡️</span>
+                    <div class="card-title">Add Security Checks</div>
+                    <div class="card-text">Include automatic safety and compliance checks in every project's process.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 12: THANK YOU ============ -->
+    <section class="slide" style="text-align:center;">
+        <div class="inner">
+            <h1 class="ty-title">Thank You</h1>
+            <p style="color:var(--text2); font-size:1.15rem; margin-top:12px;">Happy to answer any questions</p>
+            <p style="color:var(--text3); font-size:0.9rem; margin-top:20px;">Manprit Singh Panesar · Quarter 3 Review
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // Scroll reveal
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Nav scroll
+        window.addEventListener('scroll', () => {
+            document.querySelector('nav').style.background =
+                window.scrollY > 50 ? 'rgba(11,13,23,0.95)' : 'rgba(11,13,23,0.85)';
+        });
+    </script>
+
+</body>
+
+</html>
