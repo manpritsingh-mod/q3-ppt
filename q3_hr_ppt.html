@@ -47,7 +47,6 @@
             overflow-x: hidden;
         }
 
-        /* NAV */
         nav {
             position: fixed;
             top: 0;
@@ -90,7 +89,6 @@
             color: var(--text);
         }
 
-        /* SLIDE */
         .slide {
             min-height: 100vh;
             display: flex;
@@ -140,7 +138,7 @@
 
         .hero h1 {
             font-family: 'Outfit';
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 20px;
@@ -155,7 +153,7 @@
         .hero p {
             font-size: 1.15rem;
             color: var(--text2);
-            max-width: 560px;
+            max-width: 600px;
             margin: 0 auto 12px;
         }
 
@@ -195,7 +193,6 @@
             margin-top: 2px;
         }
 
-        /* TAG */
         .tag {
             display: inline-flex;
             align-items: center;
@@ -233,7 +230,12 @@
             border: 1px solid rgba(255, 183, 77, 0.2);
         }
 
-        /* SECTION TITLE */
+        .tag-green {
+            background: rgba(102, 222, 147, 0.1);
+            color: var(--green);
+            border: 1px solid rgba(102, 222, 147, 0.2);
+        }
+
         .stitle {
             font-family: 'Outfit';
             font-size: 2.6rem;
@@ -245,11 +247,11 @@
         .sdesc {
             font-size: 1.05rem;
             color: var(--text2);
-            max-width: 650px;
+            max-width: 700px;
             margin-bottom: 44px;
+            line-height: 1.8;
         }
 
-        /* CARDS */
         .grid {
             display: grid;
             gap: 20px;
@@ -300,7 +302,6 @@
             line-height: 1.7;
         }
 
-        /* POC HEADER */
         .poc-head {
             display: flex;
             align-items: center;
@@ -332,7 +333,25 @@
             font-size: 0.92rem;
         }
 
-        /* VS COMPARISON */
+        /* Story paragraph */
+        .story {
+            font-size: 1.08rem;
+            color: var(--text2);
+            line-height: 1.95;
+            max-width: 750px;
+            margin-bottom: 36px;
+        }
+
+        .story strong {
+            color: var(--text);
+        }
+
+        .story em {
+            color: var(--purple);
+            font-style: normal;
+            font-weight: 600;
+        }
+
         .vs-grid {
             display: grid;
             grid-template-columns: 1fr 60px 1fr;
@@ -390,7 +409,6 @@
             border-bottom: none;
         }
 
-        /* BANNER */
         .banner {
             border-radius: 20px;
             padding: 44px 48px;
@@ -418,7 +436,6 @@
             margin-top: 2px;
         }
 
-        /* FLOW */
         .flow {
             display: flex;
             align-items: flex-start;
@@ -477,7 +494,6 @@
             color: var(--text3);
         }
 
-        /* DIAGRAM BLOCK */
         .diagram-box {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border);
@@ -497,7 +513,44 @@
             margin-bottom: 28px;
         }
 
-        /* THANK YOU */
+        /* VALUE CARD - special highlight */
+        .value-card {
+            background: rgba(124, 106, 255, 0.06);
+            border: 1px solid rgba(124, 106, 255, 0.15);
+            border-radius: 18px;
+            padding: 32px;
+            transition: all 0.35s;
+        }
+
+        .value-card:hover {
+            background: rgba(124, 106, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .value-card .card-title {
+            color: var(--purple);
+        }
+
+        .sub-points {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .sub-points li {
+            padding: 6px 0;
+            font-size: 0.88rem;
+            color: var(--text2);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.6;
+        }
+
+        .sub-points li span {
+            flex-shrink: 0;
+        }
+
         .ty-title {
             font-family: 'Outfit';
             font-size: 4.5rem;
@@ -507,7 +560,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* ANIMATION */
         .reveal {
             opacity: 0;
             transform: translateY(35px);
@@ -519,7 +571,19 @@
             transform: translateY(0);
         }
 
-        /* RESPONSIVE */
+        /* Quote style for human touch */
+        .human-quote {
+            border-left: 3px solid var(--purple);
+            padding: 16px 24px;
+            margin: 20px 0;
+            background: rgba(124, 106, 255, 0.04);
+            border-radius: 0 12px 12px 0;
+            font-size: 1rem;
+            color: var(--text2);
+            font-style: italic;
+            line-height: 1.8;
+        }
+
         @media(max-width:768px) {
             .slide {
                 padding: 100px 20px 60px;
@@ -578,15 +642,13 @@
 
 <body>
 
-    <!-- NAV -->
     <nav>
         <div class="nav-logo">Q3 Review</div>
         <ul class="nav-links">
             <li><a href="#overview">Overview</a></li>
-            <li><a href="#project1">Project 1</a></li>
-            <li><a href="#project2">Project 2</a></li>
+            <li><a href="#project1">React UnifiedCI</a></li>
+            <li><a href="#project2">Jenkins MCP</a></li>
             <li><a href="#impact">Impact</a></li>
-            <li><a href="#learnings">Learnings</a></li>
         </ul>
     </nav>
 
@@ -594,15 +656,14 @@
     <section class="slide hero" id="overview">
         <div class="inner" style="position:relative; z-index:1;">
             <div class="hero-badge">Quarter 3 Performance Review</div>
-            <h1>Making Teams Work<br><span>Faster & Smarter</span></h1>
-            <p>Delivered two projects this quarter that help development teams save time, reduce errors, and work more
-                independently.</p>
+            <h1>I Focused on One Goal:<br><span>Helping Teams Move Faster</span></h1>
+            <p>Two problems were slowing teams down. I built solutions for both.</p>
             <div class="hero-name">Manprit Singh Panesar</div>
 
             <div class="stats-row">
                 <div class="stat">
                     <div class="stat-num">2</div>
-                    <div class="stat-label">Projects Delivered</div>
+                    <div class="stat-label">Problems Solved</div>
                 </div>
                 <div class="stat">
                     <div class="stat-num">3+</div>
@@ -616,110 +677,170 @@
         </div>
     </section>
 
-    <!-- ============ SLIDE 2: WHAT I DID ============ -->
+    <!-- ============ SLIDE 2: MY QUARTER STORY ============ -->
     <section class="slide">
         <div class="inner reveal">
-            <span class="tag tag-purple">📋 Quarter At A Glance</span>
-            <h2 class="stitle">What I Delivered This Quarter</h2>
-            <p class="sdesc">Two projects focused on making teams more productive — by removing repetitive work and
-                making information easier to access.</p>
+            <span class="tag tag-purple">📋 My Quarter</span>
+            <h2 class="stitle">Here's What Happened</h2>
+            <p class="story">
+                I talked to developers, QA, and managers. The <strong>same two complaints</strong> kept coming up:
+            </p>
 
             <div class="grid g2">
                 <div class="card">
-                    <span class="card-emoji">⚙️</span>
-                    <div class="card-title">Project 1: Standardized Build Process for React</div>
+                    <span class="card-emoji">😤</span>
+                    <div class="card-title">"Setting up a new project takes forever."</div>
                     <div class="card-text">
-                        Created a <strong>one-click setup system</strong> so any React project team can start working
-                        with the same quality process — instead of each team creating their own from scratch.
+                        Every team was building their own setup from scratch. No shared standard. I thought —
+                        <strong>why not build it once so nobody has to do it again?</strong>
                     </div>
                 </div>
                 <div class="card">
-                    <span class="card-emoji">🤖</span>
-                    <div class="card-title">Project 2: AI-Powered Problem Solver</div>
+                    <span class="card-emoji">😰</span>
+                    <div class="card-title">"Something broke and we don't know why."</div>
                     <div class="card-text">
-                        Connected our build system with <strong>AI</strong> so anyone in the team — developers, QA, or
-                        managers — can simply ask <em>"What went wrong?"</em> and get instant answers in plain language.
+                        People spent hours reading logs they didn't understand. Only 1–2 experts could help. I thought —
+                        <strong>what if anyone could just ask and get an answer?</strong>
                     </div>
                 </div>
+            </div>
+
+            <div class="human-quote">
+                I didn't want to just build something cool — I wanted to fix what was actually frustrating people.
             </div>
         </div>
     </section>
 
-    <!-- ============ SLIDE 3: PROJECT 1 — PROBLEM ============ -->
+    <!-- ============ SLIDE 3: POC 1 — THE PROBLEM ============ -->
     <section class="slide" id="project1">
         <div class="inner reveal">
             <div class="poc-head">
                 <div class="poc-num" style="background:var(--grad1);">01</div>
                 <div>
-                    <h2>Standardized Build Process</h2>
-                    <p>Making sure all React project teams follow the same quality process</p>
+                    <h2>React UnifiedCI</h2>
+                    <p>Standardized Build Process for React Projects</p>
                 </div>
             </div>
 
-            <span class="tag tag-pink">🔥 The Challenge</span>
-            <h2 class="stitle" style="font-size:2rem;">Every Team Was Doing It Differently</h2>
+            <span class="tag tag-pink">🔥 The Problem I Saw</span>
+            <h2 class="stitle" style="font-size:2rem;">Every Team Was Reinventing the Wheel</h2>
+
+            <p class="story">
+                Every team had their own way of setting things up. Some did it well, some cut corners because it took
+                too long. <strong>There was no shared standard.</strong>
+            </p>
 
             <div class="vs-grid" style="margin-top:28px;">
                 <div class="vs-box vs-before">
-                    <h3 style="color:var(--pink);">❌ Before</h3>
+                    <h3 style="color:var(--pink);">❌ What Was Happening</h3>
                     <ul>
-                        <li>📄 Every team created their own process from scratch</li>
-                        <li>🔧 Different approaches led to different quality levels</li>
-                        <li>🐛 A fix in one project didn't help other projects</li>
-                        <li>⚠️ Some teams skipped important quality checks</li>
-                        <li>⏱️ Setting up a new project took days of effort</li>
+                        <li>📄 Each team spent days writing their own setup</li>
+                        <li>🔧 Quality varied widely — some teams had great checks, others had none</li>
+                        <li>🐛 When one team found a fix, other teams never got it</li>
+                        <li>⚠️ Important quality checks were getting skipped</li>
+                        <li>⏱️ New projects took days just to set up properly</li>
                     </ul>
                 </div>
                 <div class="vs-mid">VS</div>
                 <div class="vs-box vs-after">
-                    <h3 style="color:var(--teal);">✅ After My Work</h3>
+                    <h3 style="color:var(--teal);">✅ What I Built</h3>
                     <ul>
-                        <li>📦 One ready-made system shared by all teams</li>
-                        <li>🎯 Every project follows the same quality standard</li>
-                        <li>🔄 Fix once — it helps every project automatically</li>
-                        <li>✅ Quality checks happen automatically, nothing skipped</li>
-                        <li>🚀 New project setup now takes minutes</li>
+                        <li>📦 One ready-made system that any React team can use</li>
+                        <li>🎯 Everyone now follows the same quality standard</li>
+                        <li>🔄 A fix I make today helps every project tomorrow</li>
+                        <li>✅ Quality checks run automatically — nothing gets skipped</li>
+                        <li>🚀 New project setup went from days to minutes</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ SLIDE 4: PROJECT 1 — HOW IT WORKS ============ -->
+    <!-- ============ SLIDE 4: POC 1 — HOW IT WORKS ============ -->
     <section class="slide">
         <div class="inner reveal">
             <span class="tag tag-purple">⚙️ How It Works</span>
-            <h2 class="stitle" style="font-size:2rem;">Simple, Automatic, No Extra Work</h2>
-            <p class="sdesc">Teams just connect their project — the system handles everything else automatically.</p>
+            <h2 class="stitle" style="font-size:2rem;">Zero Extra Work for the Team</h2>
+            <p class="story">
+                Teams just connect their project. Everything else — checks, tests, reports — <strong>runs on its
+                    own</strong>.
+            </p>
 
             <div class="diagram-box">
-                <div class="diagram-label">How The Process Works</div>
+                <div class="diagram-label">What Happens Behind the Scenes</div>
                 <div class="flow">
                     <div class="flow-step">
                         <div class="flow-icon" style="background:rgba(124,106,255,0.12);">👨‍💻</div>
-                        <div class="flow-title">Developer Writes Code</div>
-                        <div class="flow-desc">Team member saves their work</div>
+                        <div class="flow-title">Developer Pushes Code</div>
+                        <div class="flow-desc">Just saves their work as usual</div>
                     </div>
                     <div class="flow-step">
                         <div class="flow-icon" style="background:rgba(77,168,255,0.12);">🔍</div>
-                        <div class="flow-title">Auto Quality Check</div>
-                        <div class="flow-desc">System checks for errors & best practices</div>
+                        <div class="flow-title">Quality Check Runs</div>
+                        <div class="flow-desc">Catches issues early</div>
                     </div>
                     <div class="flow-step">
                         <div class="flow-icon" style="background:rgba(62,221,198,0.12);">🏗️</div>
-                        <div class="flow-title">Auto Build & Test</div>
-                        <div class="flow-desc">Builds the project & runs all tests</div>
+                        <div class="flow-title">Build & Test</div>
+                        <div class="flow-desc">Everything tested automatically</div>
                     </div>
                     <div class="flow-step">
                         <div class="flow-icon" style="background:rgba(255,183,77,0.12);">📊</div>
                         <div class="flow-title">Report Generated</div>
-                        <div class="flow-desc">Clear pass/fail report created</div>
+                        <div class="flow-desc">Clear pass/fail summary</div>
                     </div>
                     <div class="flow-step">
                         <div class="flow-icon" style="background:rgba(102,222,147,0.12);">🔔</div>
-                        <div class="flow-title">Team Gets Notified</div>
-                        <div class="flow-desc">Results sent via email & Slack</div>
+                        <div class="flow-title">Team Notified</div>
+                        <div class="flow-desc">Results on email & Slack</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SLIDE 5: POC 1 — VALUE GENERATED ============ -->
+    <section class="slide">
+        <div class="inner reveal">
+            <span class="tag tag-green">💎 Value Generated</span>
+            <h2 class="stitle" style="font-size:2rem;">What Value Does This Bring?</h2>
+            <p class="story">
+                Here's the real difference people feel day to day:
+            </p>
+
+            <div class="grid g2">
+                <div class="value-card">
+                    <span class="card-emoji">⏱️</span>
+                    <div class="card-title">Saves Time on Every New Project</div>
+                    <ul class="sub-points">
+                        <li><span>•</span> Project setup went from 2–3 days to about 10 minutes.</li>
+                        <li><span>•</span> Every new React project gets this — so the saving adds up fast.</li>
+                    </ul>
+                </div>
+                <div class="value-card">
+                    <span class="card-emoji">🛡️</span>
+                    <div class="card-title">Fewer Bugs, Less Rework</div>
+                    <ul class="sub-points">
+                        <li><span>•</span> Bug checks run on their own now — nobody has to remember to do them.</li>
+                        <li><span>•</span> Fewer problems slip through, so the testing team spends less time on fixes.
+                        </li>
+                    </ul>
+                </div>
+                <div class="value-card">
+                    <span class="card-emoji">🔄</span>
+                    <div class="card-title">One Fix Helps All Teams at Once</div>
+                    <ul class="sub-points">
+                        <li><span>•</span> I fix something once — every team gets it right away.</li>
+                        <li><span>•</span> No chasing teams for updates. It just works everywhere.</li>
+                    </ul>
+                </div>
+                <div class="value-card">
+                    <span class="card-emoji">🚀</span>
+                    <div class="card-title">Developers Just Focus on Their Work</div>
+                    <ul class="sub-points">
+                        <li><span>•</span> Setup is already done — developers don't touch it.</li>
+                        <li><span>•</span> Their time goes to building features, not fighting configs.</li>
+                    </ul>
                 </div>
             </div>
 
@@ -744,141 +865,120 @@
         </div>
     </section>
 
-    <!-- ============ SLIDE 5: PROJECT 1 — RESULTS ============ -->
-    <section class="slide">
-        <div class="inner reveal">
-            <span class="tag tag-teal">🏆 Results</span>
-            <h2 class="stitle" style="font-size:2rem;">What This Achieved</h2>
-
-            <div class="grid g4">
-                <div class="card" style="text-align:center;">
-                    <span class="card-emoji">📦</span>
-                    <div class="card-title">One Shared System</div>
-                    <div class="card-text">All React teams use the same process now</div>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <span class="card-emoji">✅</span>
-                    <div class="card-title">Auto Quality Checks</div>
-                    <div class="card-text">Errors caught early, nothing missed</div>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <span class="card-emoji">🧪</span>
-                    <div class="card-title">Automatic Testing</div>
-                    <div class="card-text">Tests run on their own with clear reports</div>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <span class="card-emoji">📧</span>
-                    <div class="card-title">Instant Notifications</div>
-                    <div class="card-text">Teams know the status right away</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ SLIDE 6: PROJECT 2 — PROBLEM ============ -->
+    <!-- ============ SLIDE 6: POC 2 — THE PROBLEM ============ -->
     <section class="slide" id="project2">
         <div class="inner reveal">
             <div class="poc-head">
                 <div class="poc-num" style="background:var(--grad3);">02</div>
                 <div>
-                    <h2>AI-Powered Problem Solver</h2>
-                    <p>Making it easy for anyone to understand and fix build issues</p>
+                    <h2>Jenkins MCP — AI Assistant</h2>
+                    <p>Helping anyone in the team understand and fix issues</p>
                 </div>
             </div>
 
-            <span class="tag tag-pink">🔥 The Challenge</span>
-            <h2 class="stitle" style="font-size:2rem;">Finding & Fixing Problems Was Painful</h2>
+            <span class="tag tag-pink">🔥 The Problem I Saw</span>
+            <h2 class="stitle" style="font-size:2rem;">People Were Stuck Waiting for Help</h2>
+
+            <p class="story">
+                When a build fails, <strong>most people can't figure out why</strong>. The logs are long and confusing.
+                So everyone waits for the one person who understands them. That person becomes a bottleneck.
+            </p>
 
             <div class="grid g3" style="margin-top:28px;">
                 <div class="card">
                     <span class="card-emoji">⏰</span>
-                    <div class="card-title">Hours Wasted</div>
-                    <div class="card-text">When something went wrong, someone had to manually go through thousands of
-                        lines of data to find what happened. This took hours every time.</div>
+                    <div class="card-title">Hours Lost Searching</div>
+                    <div class="card-text">Someone had to go through thousands of lines to find the one thing that
+                        broke. Every time.</div>
                 </div>
                 <div class="card">
                     <span class="card-emoji">🧑‍💼</span>
-                    <div class="card-title">Only Experts Could Help</div>
-                    <div class="card-text">Only a few experienced people could understand the error details. Everyone
-                        else had to wait — creating bottlenecks.</div>
+                    <div class="card-title">Only 1–2 People Knew How</div>
+                    <div class="card-text">If those people were busy or on leave, everyone else was stuck waiting.</div>
                 </div>
                 <div class="card">
                     <span class="card-emoji">🚧</span>
-                    <div class="card-title">Everyone Depended on One Team</div>
-                    <div class="card-text">QA, managers, and other teams always had to ask the same team for updates —
-                        they couldn't check on their own.</div>
+                    <div class="card-title">QA & Managers Couldn't Check</div>
+                    <div class="card-text">They wanted to know "Is it ready?" but had to ask a developer and wait for an
+                        answer.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ SLIDE 7: PROJECT 2 — SOLUTION ============ -->
+    <!-- ============ SLIDE 7: POC 2 — THE SOLUTION ============ -->
     <section class="slide">
         <div class="inner reveal">
-            <span class="tag tag-teal">💡 The Solution</span>
-            <h2 class="stitle" style="font-size:2rem;">Just Ask — AI Does the Rest</h2>
-            <p class="sdesc">Now anyone can ask a question in plain English and get an instant answer. No expertise
-                needed.</p>
+            <span class="tag tag-teal">💡 What I Built</span>
+            <h2 class="stitle" style="font-size:2rem;">Now You Just Ask</h2>
+            <p class="story">
+                I connected Jenkins with AI. Instead of reading logs, <strong>you ask a question</strong> — like asking
+                a colleague — and get a clear answer in seconds.
+            </p>
 
             <div class="vs-grid" style="margin-top:28px;">
                 <div class="vs-box vs-before">
-                    <h3 style="color:var(--pink);">❌ The Old Way</h3>
+                    <h3 style="color:var(--pink);">❌ How It Used to Be</h3>
                     <ul>
                         <li>🖥️ Log into the system</li>
                         <li>🔎 Navigate to the right project</li>
-                        <li>📜 Open the error details</li>
+                        <li>📜 Open the error logs</li>
                         <li>👀 Read through everything manually</li>
-                        <li>🤔 Guess what went wrong & try again</li>
+                        <li>🤔 Guess what went wrong, try a fix, repeat</li>
                     </ul>
                 </div>
                 <div class="vs-mid">VS</div>
                 <div class="vs-box vs-after">
-                    <h3 style="color:var(--teal);">✅ The New Way (AI)</h3>
+                    <h3 style="color:var(--teal);">✅ How It Works Now</h3>
                     <ul>
-                        <li>💬 Just ask: <em>"What went wrong?"</em></li>
+                        <li>💬 Just type: <em>"Hey, what happened with my build?"</em></li>
                         <li>⚡ AI pulls up the relevant information instantly</li>
-                        <li>🧠 AI identifies the root cause</li>
-                        <li>🔧 AI suggests the exact solution</li>
-                        <li>✅ You approve — problem fixed</li>
+                        <li>🧠 It figures out the root cause on its own</li>
+                        <li>🔧 Suggests a clear fix you can apply</li>
+                        <li>✅ Problem understood and resolved — in seconds</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ SLIDE 8: PROJECT 2 — WHO BENEFITS ============ -->
+    <!-- ============ SLIDE 8: POC 2 — HOW IT WORKS ============ -->
     <section class="slide">
         <div class="inner reveal">
-            <span class="tag tag-purple">👥 Who Benefits</span>
-            <h2 class="stitle" style="font-size:2rem;">Helpful for Everyone — Not Just Experts</h2>
+            <span class="tag tag-purple">👥 For Everyone, Not Just Experts</span>
+            <h2 class="stitle" style="font-size:2rem;">Works for Everyone</h2>
+            <p class="story">
+                A developer gets technical details. A manager gets a yes-or-no answer. <strong>It adapts to whoever is
+                    asking.</strong>
+            </p>
 
             <div class="diagram-box">
-                <div class="diagram-label">How It Works in Real Life</div>
+                <div class="diagram-label">How a Conversation Looks</div>
                 <div class="flow">
                     <div class="flow-step">
                         <div class="flow-icon" style="background:rgba(124,106,255,0.12);">💬</div>
-                        <div class="flow-title">Anyone Asks</div>
-                        <div class="flow-desc">A simple question in plain English</div>
+                        <div class="flow-title">You Ask</div>
+                        <div class="flow-desc">In your own words</div>
                     </div>
                     <div class="flow-step">
                         <div class="flow-icon" style="background:rgba(62,221,198,0.12);">🧠</div>
                         <div class="flow-title">AI Understands</div>
-                        <div class="flow-desc">Figures out what you need</div>
+                        <div class="flow-desc">Gets what you mean</div>
                     </div>
                     <div class="flow-step">
                         <div class="flow-icon" style="background:rgba(255,183,77,0.12);">📡</div>
-                        <div class="flow-title">Fetches Info</div>
-                        <div class="flow-desc">Gets the right data automatically</div>
+                        <div class="flow-title">Fetches the Right Info</div>
+                        <div class="flow-desc">From the build system</div>
                     </div>
                     <div class="flow-step">
                         <div class="flow-icon" style="background:rgba(255,107,157,0.12);">🔍</div>
                         <div class="flow-title">Finds the Answer</div>
-                        <div class="flow-desc">Identifies what went wrong & why</div>
+                        <div class="flow-desc">Pinpoints the issue</div>
                     </div>
                     <div class="flow-step">
                         <div class="flow-icon" style="background:rgba(102,222,147,0.12);">✅</div>
-                        <div class="flow-title">Gives Solution</div>
-                        <div class="flow-desc">Ready-to-apply fix in seconds</div>
+                        <div class="flow-title">Gives You What You Need</div>
+                        <div class="flow-desc">Fix, summary, or status</div>
                     </div>
                 </div>
             </div>
@@ -886,139 +986,160 @@
             <div class="grid g3" style="margin-top:12px;">
                 <div class="card" style="text-align:center;">
                     <span class="card-emoji">👨‍💻</span>
-                    <div class="card-title">Developers</div>
-                    <div class="card-text"><em>"What went wrong with my project?"</em><br>→ Gets instant answer + fix
-                        suggestion</div>
+                    <div class="card-title">A Developer Asks</div>
+                    <div class="card-text"><em>"My build failed — what went wrong?"</em><br><br>→ Gets the exact error +
+                        a suggested fix they can apply right away</div>
                 </div>
                 <div class="card" style="text-align:center;">
                     <span class="card-emoji">🧪</span>
-                    <div class="card-title">QA Team</div>
-                    <div class="card-text"><em>"Show me all failures from today"</em><br>→ Gets a summary across all
-                        projects</div>
+                    <div class="card-title">A QA Person Asks</div>
+                    <div class="card-text"><em>"Show me everything that failed today"</em><br><br>→ Gets a clear summary
+                        across all projects, no log reading needed</div>
                 </div>
                 <div class="card" style="text-align:center;">
                     <span class="card-emoji">👔</span>
-                    <div class="card-title">Managers</div>
-                    <div class="card-text"><em>"Is the project ready for release?"</em><br>→ AI checks everything &
-                        gives clear answer</div>
+                    <div class="card-title">A Manager Asks</div>
+                    <div class="card-text"><em>"Is this ready to go live?"</em><br><br>→ Gets a straight answer: yes,
+                        no, and what's blocking</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ SLIDE 9: COMBINED IMPACT ============ -->
-    <section class="slide" id="impact">
+    <!-- ============ SLIDE 9: POC 2 — VALUE GENERATED ============ -->
+    <section class="slide">
         <div class="inner reveal">
-            <span class="tag tag-gold">📊 Overall Impact</span>
-            <h2 class="stitle">Quarter 3 Results</h2>
-            <p class="sdesc">Both projects together are saving teams significant time, improving quality, and removing
-                bottlenecks.</p>
+            <span class="tag tag-green">💎 Value Generated</span>
+            <h2 class="stitle" style="font-size:2rem;">What Value Does This Bring?</h2>
+            <p class="story">
+                Here's the real difference it makes:
+            </p>
+
+            <div class="grid g2">
+                <div class="value-card">
+                    <span class="card-emoji">⏱️</span>
+                    <div class="card-title">People Get Hours Back in Their Day</div>
+                    <ul class="sub-points">
+                        <li><span>•</span> Debugging went from 2–3 hours to under 5 minutes — you just ask.</li>
+                        <li><span>•</span> People get that time back for their actual work.</li>
+                    </ul>
+                </div>
+                <div class="value-card">
+                    <span class="card-emoji">🔓</span>
+                    <div class="card-title">No More Waiting for That One Person</div>
+                    <ul class="sub-points">
+                        <li><span>•</span> Before, if the expert was busy or on leave, everyone was stuck.</li>
+                        <li><span>•</span> Now anyone can get answers on their own. No waiting.</li>
+                    </ul>
+                </div>
+                <div class="value-card">
+                    <span class="card-emoji">🤝</span>
+                    <div class="card-title">QA and Managers Can Check on Their Own</div>
+                    <ul class="sub-points">
+                        <li><span>•</span> QA can ask the AI directly — no need to ping a developer.</li>
+                        <li><span>•</span> Managers check release status themselves — no meetings needed.</li>
+                    </ul>
+                </div>
+                <div class="value-card">
+                    <span class="card-emoji">📈</span>
+                    <div class="card-title">Less Waiting, Faster Releases</div>
+                    <ul class="sub-points">
+                        <li><span>•</span> Decisions happen quicker when people aren't waiting for answers.</li>
+                        <li><span>•</span> Less back-and-forth means fewer delays in the day.</li>
+                    </ul>
+                </div>
+            </div>
 
             <div class="banner" style="background:var(--grad3);">
                 <div class="banner-item">
                     <div class="banner-num">70%</div>
-                    <div class="banner-label">Less Time Finding Problems</div>
+                    <div class="banner-label">Less Time on Debugging</div>
                 </div>
                 <div class="banner-item">
-                    <div class="banner-num">90%</div>
-                    <div class="banner-label">Faster New Project Setup</div>
+                    <div class="banner-num">Self-Serve</div>
+                    <div class="banner-label">Anyone Can Get Answers</div>
                 </div>
                 <div class="banner-item">
-                    <div class="banner-num">100%</div>
-                    <div class="banner-label">Consistent Quality</div>
+                    <div class="banner-num">0</div>
+                    <div class="banner-label">Dependency on Experts</div>
                 </div>
                 <div class="banner-item">
-                    <div class="banner-num">All</div>
-                    <div class="banner-label">Teams Self-Sufficient</div>
+                    <div class="banner-num">Instant</div>
+                    <div class="banner-label">Build Status for All</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="grid g2" style="margin-top:40px;">
+    <!-- ============ SLIDE 10: OVERALL IMPACT ============ -->
+    <section class="slide" id="impact">
+        <div class="inner reveal">
+            <span class="tag tag-gold">📊 Putting It All Together</span>
+            <h2 class="stitle">The Bigger Picture</h2>
+            <p class="story">
+                Both projects do the same thing: <strong>remove things that slow people down</strong>. One fixes project
+                setup. The other fixes problem-solving. Together, teams work smoother and more independently.
+            </p>
+
+            <div class="grid g2">
                 <div class="card">
                     <span class="card-emoji">🎯</span>
-                    <div class="card-title">Same High Standard Everywhere</div>
-                    <div class="card-text">Every React project now follows the same quality process. No more variations
-                        between teams — one improvement benefits everyone.</div>
+                    <div class="card-title">Same Standard, Everywhere</div>
+                    <div class="card-text">Every React project follows the same process now. Fewer surprises, more
+                        confidence in what we ship.</div>
                 </div>
                 <div class="card">
                     <span class="card-emoji">🙌</span>
-                    <div class="card-title">Teams Work Independently</div>
-                    <div class="card-text">With AI assistance, anyone can check project status and understand issues on
-                        their own — no waiting, no bottlenecks.</div>
+                    <div class="card-title">People Help Themselves</div>
+                    <div class="card-text">Whether it's setting up a project or understanding a failure — people don't
+                        wait anymore. Less frustration, fewer blockers.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============ SLIDE 10: LEARNINGS ============ -->
+    <!-- ============ SLIDE 11: LEARNINGS ============ -->
     <section class="slide" id="learnings">
         <div class="inner reveal">
-            <span class="tag tag-purple">📚 Growth</span>
-            <h2 class="stitle">What I Learned This Quarter</h2>
+            <span class="tag tag-purple">📚 What I Took Away</span>
+            <h2 class="stitle">What This Quarter Taught Me</h2>
 
             <div class="grid g3">
                 <div class="card" style="text-align:center;">
+                    <span class="card-emoji">👂</span>
+                    <div class="card-title">Listen First</div>
+                    <div class="card-text">The best ideas came from talking to people about their daily frustrations —
+                        not from staring at code.</div>
+                </div>
+                <div class="card" style="text-align:center;">
                     <span class="card-emoji">🏗️</span>
-                    <div class="card-title">Building Scalable Solutions</div>
-                    <div class="card-text">Learned to design systems that serve multiple teams with one solution</div>
+                    <div class="card-title">Build Once, Help Many</div>
+                    <div class="card-text">Making something that works for all teams — not just one — taught me to think
+                        bigger.</div>
                 </div>
                 <div class="card" style="text-align:center;">
                     <span class="card-emoji">🤖</span>
-                    <div class="card-title">Working with AI</div>
-                    <div class="card-text">Gained hands-on experience connecting AI to existing company systems</div>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <span class="card-emoji">🧪</span>
-                    <div class="card-title">Quality & Automation</div>
-                    <div class="card-text">Deepened understanding of automated quality checks, testing, and reporting
-                    </div>
+                    <div class="card-title">AI Is a Teammate, Not a Replacement</div>
+                    <div class="card-text">It's about giving everyone access to answers that used to live in one
+                        person's head.</div>
                 </div>
                 <div class="card" style="text-align:center;">
                     <span class="card-emoji">🎯</span>
-                    <div class="card-title">Problem-First Approach</div>
-                    <div class="card-text">Focused on understanding real team pain points before building solutions
-                    </div>
+                    <div class="card-title">Start with the Problem</div>
+                    <div class="card-text">The biggest impact comes from fixing real pain — not from building something
+                        just because the tech is cool.</div>
                 </div>
                 <div class="card" style="text-align:center;">
                     <span class="card-emoji">🗣️</span>
-                    <div class="card-title">Cross-Team Communication</div>
-                    <div class="card-text">Improved ability to work with and present to different teams and stakeholders
-                    </div>
+                    <div class="card-title">Explain It Simply</div>
+                    <div class="card-text">I got better at explaining technical work to non-technical people. That made
+                        a big difference in getting support.</div>
                 </div>
                 <div class="card" style="text-align:center;">
                     <span class="card-emoji">📐</span>
-                    <div class="card-title">End-to-End Ownership</div>
-                    <div class="card-text">Took ownership from idea to delivery — planning, building, testing, and
-                        presenting</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============ SLIDE 11: NEXT QUARTER ============ -->
-    <section class="slide">
-        <div class="inner reveal">
-            <span class="tag tag-teal">🔮 Looking Ahead</span>
-            <h2 class="stitle">Plans for Quarter 4</h2>
-
-            <div class="grid g3">
-                <div class="card">
-                    <span class="card-emoji">🌐</span>
-                    <div class="card-title">Expand to More Platforms</div>
-                    <div class="card-text">Extend the standardized process to support more project types beyond React.
-                    </div>
-                </div>
-                <div class="card">
-                    <span class="card-emoji">☁️</span>
-                    <div class="card-title">Scale for Larger Teams</div>
-                    <div class="card-text">Make the system handle higher workloads automatically during busy periods.
-                    </div>
-                </div>
-                <div class="card">
-                    <span class="card-emoji">🛡️</span>
-                    <div class="card-title">Add Security Checks</div>
-                    <div class="card-text">Include automatic safety and compliance checks in every project's process.
-                    </div>
+                    <div class="card-title">Own the Whole Thing</div>
+                    <div class="card-text">From spotting the problem to shipping the solution — owning the full journey
+                        made me better at my job.</div>
                 </div>
             </div>
         </div>
@@ -1028,20 +1149,18 @@
     <section class="slide" style="text-align:center;">
         <div class="inner">
             <h1 class="ty-title">Thank You</h1>
-            <p style="color:var(--text2); font-size:1.15rem; margin-top:12px;">Happy to answer any questions</p>
+            <p style="color:var(--text2); font-size:1.15rem; margin-top:12px;">I'd love to walk you through anything in
+                more detail</p>
             <p style="color:var(--text3); font-size:0.9rem; margin-top:20px;">Manprit Singh Panesar · Quarter 3 Review
             </p>
         </div>
     </section>
 
     <script>
-        // Scroll reveal
         const observer = new IntersectionObserver(entries => {
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.08 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Nav scroll
         window.addEventListener('scroll', () => {
             document.querySelector('nav').style.background =
                 window.scrollY > 50 ? 'rgba(11,13,23,0.95)' : 'rgba(11,13,23,0.85)';
