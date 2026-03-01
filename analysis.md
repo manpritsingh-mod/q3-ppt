@@ -24,7 +24,7 @@ Developer in VS Code asks Copilot:
 
 **Real Scenario:**
 ```
-You: "Trigger build for playstation-game-build job with branch=feature/new-ui"
+You: "Trigger build for X Project-app-build job with branch=feature/new-ui"
 Copilot: ✓ Build triggered, queue ID: 12345
 ```
 
@@ -46,13 +46,13 @@ Copilot: Found 3 matches:
 ```
 
 **Real Scenario:**
-A PlayStation game build fails. Instead of:
+A X Project app build fails. Instead of:
 1. Opening Jenkins in browser
 2. Finding the job
 3. Clicking on build #456
 4. Scrolling through 10,000 lines of logs
 
-You just ask: "Why did playstation-game-build #456 fail?"
+You just ask: "Why did X Project-app-build #456 fail?"
 
 #### 3. **SCM Integration**
 **What it does:**
@@ -62,11 +62,11 @@ You just ask: "Why did playstation-game-build #456 fail?"
 
 **Example Usage:**
 ```
-You: "Which Jenkins jobs use the repo git@github.com:sony/ps5-ui.git?"
+You: "Which Jenkins jobs use the repo git@github.com:x-company/x-platform-ui.git?"
 Copilot: Found 3 jobs:
-  - ps5-ui-frontend-build
-  - ps5-ui-backend-build
-  - ps5-ui-integration-tests
+  - X-Platform-ui-frontend-build
+  - X-Platform-ui-backend-build
+  - X-Platform-ui-integration-tests
 ```
 
 #### 4. **Test Results**
@@ -120,7 +120,7 @@ You push code at 3 PM → Build fails at 3:15 PM → You don't know until 5 PM
 
 **Example of Current Pain:**
 ```
-PlayStation game build takes 45 minutes
+X Project app build takes 45 minutes
 → You don't know which stage is slow
 → Can't optimize without manual analysis
 ```
@@ -186,8 +186,8 @@ Automatically analyzes build failures and provides actionable fixes.
 │  "Build failed due to missing Maven dependency              │
 │   Add this to pom.xml:                                       │
 │   <dependency>                                               │
-│     <groupId>com.sony.ps</groupId>                          │
-│     <artifactId>game-engine</artifactId>                    │
+│     <groupId>com.x-company.app</groupId>                          │
+│     <artifactId>app-engine</artifactId>                    │
 │     <version>2.1.0</version>                                │
 │   </dependency>"                                             │
 └─────────────────────────────────────────────────────────────┘
@@ -244,7 +244,7 @@ Proactively monitors YOUR builds and predicts failures before they happen.
                             ↓
 ┌─────────────────────────────────────────────────────────────┐
 │            Proactive Notification in VS Code                 │
-│  "⚠️ Your build for ps5-game-engine has 75% chance of       │
+│  "⚠️ Your build for X-Platform-app-engine has 75% chance of       │
 │   failing because:                                           │
 │   - You modified DatabaseConnection.java                    │
 │   - Last 3 builds with DB changes failed                    │
@@ -316,7 +316,7 @@ Identifies slow stages in pipelines and suggests optimizations.
 
 #### Real Example
 ```
-You: "Why is playstation-game-build so slow?"
+You: "Why is X Project-app-build so slow?"
 Copilot: 
 "Performance Analysis:
 Current: 45 minutes average
@@ -352,14 +352,14 @@ Gives you a real-time view of all your pipelines' health.
                             ↓
 ┌─────────────────────────────────────────────────────────────┐
 │              Health Score Calculation                        │
-│  ps5-game-engine:        ✅ 95% (Excellent)                 │
-│  ps5-ui-frontend:        ⚠️  78% (Needs attention)          │
-│  ps5-backend-api:        ❌ 45% (Critical)                  │
+│  X-Platform-app-engine:        ✅ 95% (Excellent)                 │
+│  X-Platform-ui-frontend:        ⚠️  78% (Needs attention)          │
+│  X-Platform-backend-api:        ❌ 45% (Critical)                  │
 └─────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────┐
 │              Actionable Insights                             │
-│  "ps5-backend-api is unhealthy:                             │
+│  "X-Platform-backend-api is unhealthy:                             │
 │  - 55% failure rate (up from 10% last week)                │
 │  - Main issue: Database connection timeouts                 │
 │  - Affecting 3 developers                                   │
@@ -373,17 +373,17 @@ You: "Show me pipeline health"
 Copilot:
 "📊 Your Pipelines Health Report:
 
-✅ playstation-game-build: 98% healthy
+✅ X Project-app-build: 98% healthy
    - 47/48 builds passed this week
    - Average time: 32 min
    - No issues
 
-⚠️ playstation-integration-tests: 72% healthy  
+⚠️ X Project-integration-tests: 72% healthy  
    - 18/25 builds passed
    - 7 failures due to flaky test: TestMultiplayer.testConnection
    - Recommendation: Fix or skip flaky test
 
-❌ playstation-deployment: 40% healthy
+❌ X Project-deployment: 40% healthy
    - 8/20 deployments succeeded
    - Critical: AWS credentials expired
    - Action required: Update credentials in Jenkins"
@@ -400,14 +400,14 @@ Generates optimized Jenkinsfiles based on your project type.
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  Developer: "Create a Jenkins pipeline for my Spring Boot   │
-│              PlayStation backend service"                    │
+│              X Project backend service"                    │
 └─────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────┐
 │  MCP Extension: generatePipeline(projectType, requirements) │
 │  1. Analyzes project structure                              │
 │  2. Detects: Java 17, Spring Boot, Maven, JUnit            │
-│  3. Checks Sony/PlayStation best practices                  │
+│  3. Checks X Company/X Project best practices                  │
 │  4. Applies security standards                              │
 └─────────────────────────────────────────────────────────────┘
                             ↓
@@ -417,15 +417,15 @@ Generates optimized Jenkinsfiles based on your project type.
 │  - Adds caching for speed                                   │
 │  - Includes security scans                                  │
 │  - Adds notifications                                        │
-│  - Follows Sony standards                                   │
+│  - Follows X Company standards                                   │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 #### Real Example
 ```
-You: "Generate a Jenkins pipeline for my new PlayStation API service"
+You: "Generate a Jenkins pipeline for my new X Project API service"
 Copilot:
-"I've created an optimized Jenkinsfile for your PlayStation API:
+"I've created an optimized Jenkinsfile for your X Project API:
 
 Features included:
 ✅ Maven build with caching (faster builds)
@@ -485,7 +485,7 @@ Would you like me to create this file?"
 ### Data Flow Example: "Analyze Build Failure"
 ```
 1. Developer in VS Code:
-   "Analyze failure of playstation-game-build #456"
+   "Analyze failure of X Project-app-build #456"
    
 2. GitHub Copilot:
    - Receives request
@@ -504,9 +504,9 @@ Would you like me to create this file?"
    - Formats response for developer
    
 5. Developer sees:
-   "Root Cause: Missing dependency 'libPS5Graphics.so'
+   "Root Cause: Missing dependency 'libX-PlatformGraphics.so'
     Fix: Add to CMakeLists.txt:
-    target_link_libraries(game_engine libPS5Graphics)
+    target_link_libraries(game_engine libX-PlatformGraphics)
     This same issue occurred in build #234, fixed the same way."
 ```
 
@@ -540,7 +540,7 @@ Would you like me to create this file?"
 
 ---
 
-## Why This Matters for Sony PlayStation
+## Why This Matters for X Company X Project
 
 ### Impact on Daily Work
 
@@ -555,13 +555,13 @@ Would you like me to create this file?"
 - Better visibility into pipeline health
 
 **For Organization:**
-- Faster time to market for PlayStation features
+- Faster time to market for X Project features
 - Reduced infrastructure costs (optimized builds)
 - Better developer experience = higher productivity
 
 ### ROI Example
 ```
-Sony has 50 developers working on PlayStation projects
+X Company has 50 developers working on X Project projects
 Each developer wastes 3 hours/week on CI/CD issues
 = 150 hours/week wasted
 = 600 hours/month wasted
@@ -604,4 +604,4 @@ Plus: Faster feature delivery, happier developers
 **Current Plugin**: Brings Jenkins to VS Code (convenience)
 **Advanced Extensions**: Makes Jenkins intelligent (productivity multiplier)
 
-This is the difference between a "nice to have" and a "game changer" for daily DevOps work at Sony PlayStation.
+This is the difference between a "nice to have" and a "game changer" for daily DevOps work at X Company X Project.
