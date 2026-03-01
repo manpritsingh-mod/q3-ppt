@@ -182,7 +182,7 @@ Developer asks "Generate fix" → Copilot generates fix → Developer applies
 │                                                                  │
 │ Jenkins Dashboard (http://localhost:8080):                      │
 │ ┌─────────────────────────────────────────────────────────┐    │
-│ │ Job: playstation-game-build                              │    │
+│ │ Job: X Project-app-build                              │    │
 │ │ Build #456: ❌ FAILED                                    │    │
 │ │ Duration: 5 minutes                                      │    │
 │ │ Console Output: [View]                                   │    │
@@ -196,7 +196,7 @@ Developer asks "Generate fix" → Copilot generates fix → Developer applies
 │ ┌─────────────────────────────────────────────────────────┐    │
 │ │ GitHub Copilot Chat                                      │    │
 │ │                                                           │    │
-│ │ You: "Analyze failure of playstation-game-build #456"   │    │
+│ │ You: "Analyze failure of X Project-app-build #456"   │    │
 │ │                                                           │    │
 │ └─────────────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────────────┘
@@ -209,7 +209,7 @@ Developer asks "Generate fix" → Copilot generates fix → Developer applies
 │                                                                  │
 │ MCP Call:                                                        │
 │ analyzeBuildFailure(                                             │
-│   jobName: "playstation-game-build",                            │
+│   jobName: "X Project-app-build",                            │
 │   buildNumber: 456                                               │
 │ )                                                                │
 └─────────────────────────────────────────────────────────────────┘
@@ -269,7 +269,7 @@ Developer asks "Generate fix" → Copilot generates fix → Developer applies
 │ │ 💡 Solution:                                             │    │
 │ │ Add this import at the top of GameController.java:      │    │
 │ │                                                           │    │
-│ │ import com.sony.ps.session.PlayerSession;               │    │
+│ │ import com.x-company.app.session.PlayerSession;               │    │
 │ │                                                           │    │
 │ │ 📊 Confidence: High (similar issue in build #234)       │    │
 │ │                                                           │    │
@@ -284,10 +284,10 @@ Developer asks "Generate fix" → Copilot generates fix → Developer applies
 │                                                                  │
 │ Copilot: "Here's the fix:                                       │
 │                                                                  │
-│ File: src/main/java/com/sony/ps/GameController.java            │
+│ File: src/main/java/com/x-company/app/GameController.java            │
 │                                                                  │
 │ Add after line 2:                                               │
-│ import com.sony.ps.session.PlayerSession;                      │
+│ import com.x-company.app.session.PlayerSession;                      │
 │                                                                  │
 │ [Apply Fix] button"                                             │
 └─────────────────────────────────────────────────────────────────┘
@@ -303,7 +303,7 @@ Developer asks "Generate fix" → Copilot generates fix → Developer applies
 │ Then asks Copilot:                                              │
 │ You: "Trigger a new build"                                      │
 │                                                                  │
-│ Copilot calls: triggerBuild("playstation-game-build")          │
+│ Copilot calls: triggerBuild("X Project-app-build")          │
 │ → Build #457 starts                                             │
 │                                                                  │
 │ Copilot: "✅ Build #457 triggered successfully"                │
@@ -359,7 +359,7 @@ Developer asks "Generate fix" → Copilot generates fix → Developer applies
 │ ┌─────────────────────────────────────────────────────────┐    │
 │ │ 🔴 Jenkins Build Failed                                  │    │
 │ │                                                           │    │
-│ │ Job: playstation-game-build #456                         │    │
+│ │ Job: X Project-app-build #456                         │    │
 │ │ Click to analyze in VS Code                              │    │
 │ └─────────────────────────────────────────────────────────┘    │
 │                                                                  │
@@ -645,7 +645,7 @@ public class PipelineHealthExtension implements McpServerExtension {
 
 1. Open VS Code
 2. Open Copilot Chat
-3. Type: "Analyze failure of playstation-game-build #456"
+3. Type: "Analyze failure of X Project-app-build #456"
 4. Copilot shows:
    - Root cause
    - Error location
@@ -663,7 +663,7 @@ Time saved: 30 minutes → 2 minutes
 │ DEMO PART 3: Show Performance Analysis (3 minutes)              │
 └─────────────────────────────────────────────────────────────────┘
 
-1. Type: "Analyze performance of playstation-game-build"
+1. Type: "Analyze performance of X Project-app-build"
 2. Copilot shows:
    - Average build time: 45 minutes
    - Slowest stage: Compilation (25 min)
@@ -822,7 +822,7 @@ POST http://localhost:8080/mcp-server/sse
   "params": {
     "name": "analyzeBuildFailure",
     "arguments": {
-      "jobName": "playstation-game-build",
+      "jobName": "X Project-app-build",
       "buildNumber": 456
     }
   }
@@ -850,13 +850,13 @@ Returns JSON:
   "status": "FAILED",
   "errorType": "COMPILATION_ERROR",
   "errorMessage": "cannot find symbol: class PlayerSession",
-  "file": "src/main/java/com/sony/ps/GameController.java",
+  "file": "src/main/java/com/x-company/app/GameController.java",
   "line": 145,
   "stackTrace": "...",
   "recentCommits": [
     {
       "hash": "abc123",
-      "author": "john.doe@sony.com",
+      "author": "john.doe@x-company.com",
       "message": "Added player session management",
       "timestamp": "2026-02-28T14:30:00Z"
     }
@@ -880,11 +880,11 @@ Copilot generates response:
 "Build #456 failed due to a compilation error in GameController.java at line 145.
 The error is 'cannot find symbol: class PlayerSession'.
 
-This was introduced in commit abc123 by john.doe@sony.com which added player 
+This was introduced in commit abc123 by john.doe@x-company.com which added player 
 session management but forgot to add the import statement.
 
 A similar issue occurred in build #234 and was fixed by adding:
-import com.sony.ps.session.PlayerSession;
+import com.x-company.app.session.PlayerSession;
 
 Would you like me to generate the fix?"
     ↓
@@ -906,12 +906,12 @@ Developer sees response in VS Code
 
 ✅ No External LLM API Needed
    - GitHub Copilot IS your LLM
-   - It's already approved by Sony
+   - It's already approved by X Company
    - No API costs
    - No data leaving your network
 
 ✅ Works with Company Jenkins
-   - Can connect to Sony's Jenkins server
+   - Can connect to X Company's Jenkins server
    - Just need network access
    - No installation on company servers needed
 
@@ -1001,8 +1001,8 @@ Developer sees response in VS Code
    - Works locally
    - Reliable for demo
 
-✅ PlayStation Relevance
-   - Helps game developers
+✅ X Project Relevance
+   - Helps developers
    - Improves build times
    - Reduces downtime
    - Fits "Delete, Delegate, Automate" category
